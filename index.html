@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SL-Audio Demo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="container pt-5">
+        <h1 style="text-align: center;">SL-Audio Demo</h1>
+    </div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+	<h2 id="Tokenizer Performance" style="text-align: center;">Tokenizer Performance</h2>
+    <!-- <p> 
+        Samples from the LibriSpeech test-clean dataset.
+        <strong>VALL-E#</strong>:the third-party implementation trained on LibriTTS.  <strong>USLM*</strong>: the official released models trained on LibriTTS.
+    </p> -->
+    	<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+			<th style="text-align: center">GT</th>
+			<th style="text-align: center">DAC (3 RVQ, 1.5 kbps)</th>
+			<th style="text-align: center">SemantiCodec (2 VQ, 1.43 kbps)</th>
+			<th style="text-align: center">Encodec (1 RVQ, 0.75 kbps)</th>
+			<th style="text-align: center">AudioLDM2-Tokenizer</th>
+			<th style="text-align: center">SL-Audio-Tokenizer (f0)</th>
+			<th style="text-align: center">SL-Audio-Tokenizer (f0,f1)</th>
+			<th style="text-align: center">SL-Audio-Tokenizer (f0,f1,f2)</th>
+			</tr>
+			</thead>
+        <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/gt/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/dac/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/semanticodec/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/encodec/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/audioldm2_tokenizer/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/0/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/1/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+        <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/2/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+        <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/gt/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/dac/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/semanticodec/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/encodec/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/audioldm2_tokenizer/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/0/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/1/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/2/104851.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+        <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/gt/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/dac/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/semanticodec/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/encodec/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/audioldm2_tokenizer/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/0/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/1/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/2/107207.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+        <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/gt/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/dac/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/semanticodec/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/encodec/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/audioldm2_tokenizer/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/0/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/1/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/2/106298.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+        <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/gt/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/dac/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/semanticodec/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/encodec/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/audioldm2_tokenizer/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/0/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/1/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tokenizer/sl_audio_tokenizer/2/103130.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+
+            </tbody>
+            </table>
+            </div>
+            </div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+	<h2 id="Text-to-Audio Generation" style="text-align: center;">Text-to-Audio Generation</h2>
+    <!-- <p> 
+        Samples from the LibriSpeech test-clean dataset.
+        <strong>VALL-E#</strong>:the third-party implementation trained on LibriTTS.  <strong>USLM*</strong>: the official released models trained on LibriTTS.
+    </p> -->
+    	<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+			<th style="text-align: center">Text</th>
+			<th style="text-align: center">AudioLDM2</th>
+			<th style="text-align: center">Stable-Audio-Open</th>
+			<th style="text-align: center">SL-Audio</th>
+			<th style="text-align: center">SL-Audio-gen</th>
+			</tr>
+			</thead>
+            <tr><td style="text-align: left;vertical-align:middle;width: 600px">Whistling with pigeons cooing, wings flapping, and birds chirping</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/105016.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/105016.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/105016.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/105016.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+            <tr><td style="text-align: left;vertical-align:middle;width: 600px">Music in the background as a woman speaks and food fries</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/104833.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/104833.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/104833.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/104833.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+            <tr><td style="text-align: left;vertical-align:middle;width: 600px">A ticktock sound playing at the same rhythm with piano notes</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/104114.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/104114.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/104114.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/104114.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+            <tr><td style="text-align: left;vertical-align:middle;width: 600px">Water trickles as birds chirp then drums begin to play</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/107235.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+                <tr><td style="text-align: left;vertical-align:middle;width: 600px">Tires squealing and an engine revving</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/106077.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/106077.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/106077.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/106077.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            </tr>
+            <tr><td style="text-align: left;vertical-align:middle;width: 600px">A large bell rings out multiple times</td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/audioldm2/9650.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/stable_audio/9650.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio/scale_0/9650.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tta/sl_audio_gen/scale_0/9650.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+                </tr>
+
+            </tbody>
+            </table>
+            </div>
+            </div>
+
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h2 id="Text-queried Audio Separation" style="text-align: center;">Text-queried Audio Separation</h2>
+
+    <h3 style="text-align: center; margin-top: 1.5rem;">Comparison on FSD50K</h3>
+    <div class="table-responsive pt-3">
+        <table class="table table-hover pt-2">
+        <thead>
+        <tr>
+        <th style="text-align: center">Text Instruction</th>
+        <th style="text-align: center">Mixture Audio</th>
+        <th style="text-align: center">GT</th>
+        <th style="text-align: center">AudioSep</th>
+        <th style="text-align: center">SL-Audio-sep (f0)</th>
+        <th style="text-align: center">SL-Audio-sep (f0,f1)</th>
+        <th style="text-align: center">SL-Audio (f0,f1,f2)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Extract the sound of belly laugh,giggle</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/fsd50k_test_10h_mix35.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/gt/fsd50k_test_10h_target35.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/AudioSep/fsd50k_test_10h_target35.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_0/extract/fsd50k_test_10h_target35.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_1/extract/fsd50k_test_10h_target35.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_2/extract/fsd50k_test_10h_target35.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Separate the sound of tick</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/fsd50k_test_10h_mix3.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/gt/fsd50k_test_10h_target3.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/AudioSep/fsd50k_test_10h_target3.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_0/extract/fsd50k_test_10h_target3.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_1/extract/fsd50k_test_10h_target3.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_2/extract/fsd50k_test_10h_target3.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Separate the sound of snap,chirp and tweet</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/fsd50k_test_10h_mix10.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/gt/fsd50k_test_10h_target10.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/AudioSep/fsd50k_test_10h_target10.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_0/extract/fsd50k_test_10h_target10.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_1/extract/fsd50k_test_10h_target10.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_2/extract/fsd50k_test_10h_target10.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Remove male speech and man speaking</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/fsd50k_test_10h_mix36.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/gt/fsd50k_test_10h_target36.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/AudioSep/fsd50k_test_10h_target36.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_0/extract/fsd50k_test_10h_target36.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_1/extract/fsd50k_test_10h_target36.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/fsd/scale_2/extract/fsd50k_test_10h_target36.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+
+    <h3 style="text-align: center; margin-top: 2rem;">Other Challenge cases</h3>
+    <div class="table-responsive pt-3">
+        <table class="table table-hover pt-2">
+        <thead>
+        <tr>
+        <th style="text-align: center">Mixture Audio</th>
+        <th style="text-align: center">Text Instruction</th>
+        <th style="text-align: center">SL-Audio-sep (f0)</th>
+        <th style="text-align: center">SL-Audio-sep (f0,f1)</th>
+        <th style="text-align: center">SL-Audio (f0,f1,f2)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- <tr>
+            <td style="text-align: center; vertical-align:middle" rowspan="1"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/1_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Drop people cheering</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/1_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/1_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/1_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: center; vertical-align:middle" rowspan="2"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/2_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Extract the sound of a duck quacking in water</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/extract/2_mixed_extract.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/extract/2_mixed_extract.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/extract/2_mixed_extract.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Remove the sound of a duck quacking in water</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/2_mixed_remove.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/2_mixed_remove.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/2_mixed_remove.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: center; vertical-align:middle" rowspan="1"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/3_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Drop the sound of dishes and pots and pans in the middle</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/3_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/3_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/3_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr> -->
+        <tr>
+            <td style="text-align: center; vertical-align:middle" rowspan="12"><audio controls="controls" style="width: 140px;"><source src="tqass/mixture/vacuum_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+                    <td style="text-align: left;vertical-align:middle;width: 600px">Extract the sound of piano</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/vacuum_mixed_extract_piano.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/vacuum_mixed_extract_piano.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/vacuum_mixed_extract_piano.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Extract the sound of knocking</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/vacuum_mixed_extract_knock.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/vacuum_mixed_extract_knock.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/vacuum_mixed_extract_knock.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+            <td style="text-align: left;vertical-align:middle;width: 600px">Remove vacuum cleaner</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/vacuum_mixed_remove_vacuum_clean.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/vacuum_mixed_remove_vacuum_clean.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/vacuum_mixed_remove_vacuum_clean.wav"/>Your browser does not support the audio element.</audio></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;vertical-align:middle;width: 600px">Remove vacuum cleaner,water tap and faucet,cat meow</td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_0/remove/vacuum_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_1/remove/vacuum_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="tqass/sl-audio-sep/scale_2/remove/vacuum_mixed.wav"/>Your browser does not support the audio element.</audio></td>
+
+        </tr>
+
+        </tbody>
+        </table>
+        </div>
+
+        </tbody>
+        </table>
+        </div>
+
+</body>
+</html>
